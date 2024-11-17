@@ -4,9 +4,14 @@ try:
 
     if len(nome_usr) == 0:
         raise ValueError("O nome não pode estar vazio. ")
+        exit()
 
     elif any(char.isdigit() for char in nome_usr):
         raise ValueError("O nome não deve conter números. ")
+        exit()
+    elif nome_usr.isspace():
+        print("Foi digitado apenas espaço. ")
+        exit()
 
     else:
         print("Nome válido: ",nome_usr)
@@ -20,7 +25,8 @@ try:
 
     if salario_usr < 0:
         raise ValueError("Digite um valor positivo para o salário. ")
-    
+        exit()
+
 except ValueError:
     print("Entrada inválida para o salário. Por favor, digite um número.")
     exit()
@@ -30,6 +36,8 @@ try:
 
     if bonus_usr < 0:
         print("Digite um valor positivo para o bônus. ")
+        exit()
+
 except ValueError:
     print("Entrada inválida para o bônus. Por favor, digite um número.")
     exit()
